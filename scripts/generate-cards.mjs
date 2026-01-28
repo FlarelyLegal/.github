@@ -40,6 +40,25 @@ const LANG_COLORS = {
   C: '#555555',
 };
 
+// Badge configs for shields.io (logo name, color, text color)
+const BADGE_CONFIG = {
+  // Languages
+  JavaScript: { logo: 'javascript', color: 'F7DF1E', logoColor: 'black' },
+  TypeScript: { logo: 'typescript', color: '3178C6', logoColor: 'white' },
+  Python: { logo: 'python', color: '3776AB', logoColor: 'white' },
+  Rust: { logo: 'rust', color: '000000', logoColor: 'white' },
+  Shell: { logo: 'gnu-bash', color: '4EAA25', logoColor: 'white', label: 'Shell' },
+  PHP: { logo: 'php', color: '777BB4', logoColor: 'white' },
+  Go: { logo: 'go', color: '00ADD8', logoColor: 'white' },
+  Ruby: { logo: 'ruby', color: 'CC342D', logoColor: 'white' },
+  Java: { logo: 'openjdk', color: 'ED8B00', logoColor: 'white' },
+  // Infrastructure (always shown)
+  Cloudflare: { logo: 'cloudflare', color: 'F38020', logoColor: 'white' },
+  Proxmox: { logo: 'proxmox', color: 'E57000', logoColor: 'white' },
+  Ansible: { logo: 'ansible', color: 'EE0000', logoColor: 'white' },
+  pfSense: { logo: 'pfsense', color: '212121', logoColor: 'white' },
+};
+
 const ORG = process.env.ORG_NAME || 'flarelylegal';
 const OUTPUT_DIR = process.env.OUTPUT_DIR || './profile-summary-card-output/gruvbox';
 
@@ -48,7 +67,7 @@ function fetchOrgData() {
   console.log(`Fetching data for org: ${ORG}`);
   
   const reposJson = execSync(
-    `gh repo list ${ORG} --limit 100 --json name,description,languages,stargazerCount,forkCount,updatedAt`,
+    `gh repo list ${ORG} --limit 100 --json name,description,languages,stargazerCount,forkCount,updatedAt,isPrivate`,
     { encoding: 'utf-8' }
   );
   
@@ -88,9 +107,13 @@ function calcLanguageStats(repos) {
 function calcOrgStats(repos) {
   const totalStars = repos.reduce((sum, r) => sum + (r.stargazerCount || 0), 0);
   const totalForks = repos.reduce((sum, r) => sum + (r.forkCount || 0), 0);
+  const publicRepos = repos.filter(r => !r.isPrivate).length;
+  const privateRepos = repos.filter(r => r.isPrivate).length;
   
   return {
     totalRepos: repos.length,
+    publicRepos,
+    privateRepos,
     totalStars,
     totalForks,
   };
@@ -152,39 +175,82 @@ function generateLangCard(langStats) {
   return generateCard('Top Languages', bars + legendItems, 400, 180);
 }
 
-// Generate org stats card
-function generateStatsCard(stats) {
-  const items = [
-    { label: 'Total Repositories', value: stats.totalRepos, icon: '📦' },
-    { label: 'Total Stars', value: stats.totalStars, icon: '⭐' },
-    { label: 'Total Forks', value: stats.totalForks, icon: '🍴' },
-  ];
-  
-  let content = '';
-  items.forEach((item, i) => {
-    const y = 70 + (i * 35);
-    content += `
-      <text x="20" y="${y}" class="label">${item.icon} ${item.label}</text>
-      <text x="350" y="${y}" class="value" text-anchor="end">${item.value}</text>
-    `;
-  });
-  
-  return generateCard(`${ORG} Stats`, content, 400, 180);
-}
-
 // Generate profile details card (wide)
 function generateProfileCard(stats, langStats) {
   const topLangs = langStats.slice(0, 3).map(l => l.name).join(', ');
   
   const content = `
-    <text x="20" y="70" class="label">Organization focused on Cloudflare, infrastructure, and automation</text>
-    <text x="20" y="105" class="label">📦 ${stats.totalRepos} Repositories</text>
-    <text x="200" y="105" class="label">⭐ ${stats.totalStars} Stars</text>
-    <text x="340" y="105" class="label">🍴 ${stats.totalForks} Forks</text>
-    <text x="20" y="140" class="label">🔤 Top Languages: ${topLangs}</text>
+    <text x="240" y="70" class="label" text-anchor="middle">Org Stats</text>
+    <text x="240" y="110" class="label" text-anchor="middle">📦 ${stats.publicRepos} Public + ${stats.privateRepos} Private Repos  •  ⭐ ${stats.totalStars} Stars</text>
   `;
   
-  return generateCard(ORG, content, 480, 170);
+  return generateCard('Flarely Legal', content, 480, 140);
+}
+
+// Generate badge markdown
+function generateBadge(name) {
+  const config = BADGE_CONFIG[name];
+  if (!config) return null;
+  
+  const label = config.label || name;
+  const logo = config.logo;
+  const color = config.color;
+  const logoColor = config.logoColor || 'white';
+  
+  return `![${label}](https://img.shields.io/badge/${encodeURIComponent(label)}-${color}?style=flat&logo=${logo}&logoColor=${logoColor})`;
+}
+
+// Generate all badges markdown
+function generateBadgesMarkdown(langStats) {
+  // Infrastructure badges (always shown, in order)
+  const infraBadges = ['Cloudflare', 'Proxmox', 'Ansible', 'pfSense']
+    .map(generateBadge)
+    .filter(Boolean);
+  
+  // Language badges (from detected languages)
+  const langBadges = langStats
+    .map(l => generateBadge(l.name))
+    .filter(Boolean);
+  
+  return {
+    infrastructure: infraBadges.join('\n'),
+    languages: langBadges.join('\n'),
+  };
+}
+
+// Update profile README with dynamic badges
+function updateProfileReadme(langStats) {
+  const badges = generateBadgesMarkdown(langStats);
+  
+  const readme = `<div align="center">
+
+# Welcome to Flarely Legal
+
+Everything here is perfectly legal... flarely.
+
+Tinkering with Cloudflare, homelabs, and infrastructure automation at [flarelylegal.com](https://flarelylegal.com)
+
+## Technologies
+
+${badges.infrastructure}
+
+${badges.languages}
+
+## Stats
+
+![](https://raw.githubusercontent.com/flarelylegal/.github/main/profile-summary-card-output/gruvbox/0-profile-details.svg)
+
+![](https://raw.githubusercontent.com/flarelylegal/.github/main/profile-summary-card-output/gruvbox/1-repos-per-language.svg)
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=flarelylegal/.github)](https://github.com/flarelylegal/.github/graphs/contributors)
+
+</div>
+`;
+  
+  writeFileSync('./profile/README.md', readme);
+  console.log('Updated: profile/README.md');
 }
 
 // Main
@@ -209,7 +275,6 @@ async function main() {
   const cards = [
     { name: '0-profile-details.svg', svg: generateProfileCard(orgStats, langStats) },
     { name: '1-repos-per-language.svg', svg: generateLangCard(langStats) },
-    { name: '3-stats.svg', svg: generateStatsCard(orgStats) },
   ];
   
   // Write cards
@@ -218,6 +283,9 @@ async function main() {
     writeFileSync(path, card.svg);
     console.log(`Generated: ${path}`);
   }
+  
+  // Update profile README with dynamic badges
+  updateProfileReadme(langStats);
   
   console.log('Done!');
 }
