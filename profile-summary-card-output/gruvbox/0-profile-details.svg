@@ -6,12 +6,12 @@
     .small { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #928374; }
   </style>
   <rect width="480" height="170" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
-  <text x="20" y="35" class="title">flarelylegal</text>
+  <text x="20" y="35" class="title">FlarelyLegal</text>
   
     <text x="20" y="70" class="label">Organization focused on Cloudflare, infrastructure, and automation</text>
-    <text x="20" y="105" class="label">📦 15 Repositories</text>
-    <text x="200" y="105" class="label">⭐ 1 Stars</text>
+    <text x="20" y="105" class="label">📦 2 Repositories</text>
+    <text x="200" y="105" class="label">⭐ 0 Stars</text>
     <text x="340" y="105" class="label">🍴 0 Forks</text>
-    <text x="20" y="140" class="label">🔤 Top Languages: TypeScript, Python, Rust</text>
+    <text x="20" y="140" class="label">🔤 Top Languages: TypeScript, JavaScript</text>
   
 </svg>
