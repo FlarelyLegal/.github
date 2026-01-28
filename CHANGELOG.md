@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-01-28
+
+### Added
+- Dependabot configuration for automated GitHub Actions updates (weekly)
+- New "Agents" section in profile README with OpenCode badge
+
+### Changed
+- Profile card now shows "Org Stats" with correct public/private repo counts
+- Centered card titles
+
 ## [1.0.0] - 2026-01-28
 
 ### Added
