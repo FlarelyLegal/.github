@@ -129,7 +129,7 @@ function generateCard(title, content, width = 400, height = 200) {
     .small { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${COLORS.gray}; }
   </style>
   <rect width="${width}" height="${height}" rx="8" fill="${COLORS.bg}" stroke="${COLORS.bg2}" stroke-width="1"/>
-  <text x="20" y="35" class="title">${title}</text>
+  <text x="${width / 2}" y="35" class="title" text-anchor="middle">${title}</text>
   ${content}
 </svg>`;
 }

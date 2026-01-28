@@ -6,9 +6,9 @@
     .small { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #928374; }
   </style>
   <rect width="480" height="140" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
-  <text x="20" y="35" class="title">Flarely Legal</text>
+  <text x="240" y="35" class="title" text-anchor="middle">Flarely Legal</text>
   
     <text x="240" y="70" class="label" text-anchor="middle">Org Stats</text>
-    <text x="240" y="110" class="label" text-anchor="middle">📦 2 Public + 0 Private Repos  •  ⭐ 0 Stars</text>
+    <text x="240" y="110" class="label" text-anchor="middle">📦 2 Public + 11 Private Repos  •  ⭐ 1 Stars</text>
   
 </svg>
