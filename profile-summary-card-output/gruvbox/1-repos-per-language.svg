@@ -7,29 +7,13 @@
   </style>
   <rect width="400" height="180" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
   <text x="20" y="35" class="title">Top Languages</text>
-  <rect x="20" y="60" width="176.46" height="10" fill="#3178c6" rx="2"/><rect x="196.46" y="60" width="62.9" height="10" fill="#3572A5" rx="2"/><rect x="259.36" y="60" width="41.82000000000001" height="10" fill="#dea584" rx="2"/><rect x="301.18" y="60" width="26.86" height="10" fill="#f1e05a" rx="2"/><rect x="328.04" y="60" width="12.240000000000002" height="10" fill="#89e051" rx="2"/><rect x="340.28000000000003" y="60" width="10.54" height="10" fill="#336790" rx="2"/>
+  <rect x="20" y="60" width="320.96000000000004" height="10" fill="#3178c6" rx="2"/><rect x="340.96000000000004" y="60" width="19.04" height="10" fill="#f1e05a" rx="2"/>
       <circle cx="26" cy="95" r="6" fill="#3178c6"/>
       <text x="38" y="99" class="label">TypeScript</text>
-      <text x="140" y="99" class="small">51.9%</text>
+      <text x="140" y="99" class="small">94.4%</text>
     
-      <circle cx="206" cy="95" r="6" fill="#3572A5"/>
-      <text x="218" y="99" class="label">Python</text>
-      <text x="320" y="99" class="small">18.5%</text>
-    
-      <circle cx="26" cy="120" r="6" fill="#dea584"/>
-      <text x="38" y="124" class="label">Rust</text>
-      <text x="140" y="124" class="small">12.3%</text>
-    
-      <circle cx="206" cy="120" r="6" fill="#f1e05a"/>
-      <text x="218" y="124" class="label">JavaScript</text>
-      <text x="320" y="124" class="small">7.9%</text>
-    
-      <circle cx="26" cy="145" r="6" fill="#89e051"/>
-      <text x="38" y="149" class="label">Shell</text>
-      <text x="140" y="149" class="small">3.6%</text>
-    
-      <circle cx="206" cy="145" r="6" fill="#336790"/>
-      <text x="218" y="149" class="label">PLpgSQL</text>
-      <text x="320" y="149" class="small">3.1%</text>
+      <circle cx="206" cy="95" r="6" fill="#f1e05a"/>
+      <text x="218" y="99" class="label">JavaScript</text>
+      <text x="320" y="99" class="small">5.6%</text>
     
 </svg>
