@@ -7,13 +7,29 @@
   </style>
   <rect width="400" height="180" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
   <text x="200" y="35" class="title" text-anchor="middle">Top Languages</text>
-  <rect x="20" y="60" width="320.96000000000004" height="10" fill="#3178c6" rx="2"/><rect x="340.96000000000004" y="60" width="19.04" height="10" fill="#f1e05a" rx="2"/>
-      <circle cx="26" cy="95" r="6" fill="#3178c6"/>
-      <text x="38" y="99" class="label">TypeScript</text>
-      <text x="140" y="99" class="small">94.4%</text>
+  <rect x="20" y="60" width="149.6" height="10" fill="#928374" rx="2"/><rect x="169.6" y="60" width="143.82" height="10" fill="#f1e05a" rx="2"/><rect x="313.41999999999996" y="60" width="40.8" height="10" fill="#3178c6" rx="2"/><rect x="354.21999999999997" y="60" width="4.76" height="10" fill="#89e051" rx="2"/><rect x="358.97999999999996" y="60" width="0.68" height="10" fill="#928374" rx="2"/><rect x="359.65999999999997" y="60" width="0.34" height="10" fill="#563d7c" rx="2"/>
+      <circle cx="26" cy="95" r="6" fill="#928374"/>
+      <text x="38" y="99" class="label">Vue</text>
+      <text x="140" y="99" class="small">44.0%</text>
     
       <circle cx="206" cy="95" r="6" fill="#f1e05a"/>
       <text x="218" y="99" class="label">JavaScript</text>
-      <text x="320" y="99" class="small">5.6%</text>
+      <text x="320" y="99" class="small">42.3%</text>
+    
+      <circle cx="26" cy="120" r="6" fill="#3178c6"/>
+      <text x="38" y="124" class="label">TypeScript</text>
+      <text x="140" y="124" class="small">12.0%</text>
+    
+      <circle cx="206" cy="120" r="6" fill="#89e051"/>
+      <text x="218" y="124" class="label">Shell</text>
+      <text x="320" y="124" class="small">1.4%</text>
+    
+      <circle cx="26" cy="145" r="6" fill="#928374"/>
+      <text x="38" y="149" class="label">Dockerfile</text>
+      <text x="140" y="149" class="small">0.2%</text>
+    
+      <circle cx="206" cy="145" r="6" fill="#563d7c"/>
+      <text x="218" y="149" class="label">CSS</text>
+      <text x="320" y="149" class="small">0.1%</text>
     
 </svg>
