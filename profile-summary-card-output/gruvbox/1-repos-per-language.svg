@@ -7,13 +7,13 @@
   </style>
   <rect width="400" height="180" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
   <text x="200" y="35" class="title" text-anchor="middle">Top Languages</text>
-  <rect x="20" y="60" width="323.34" height="10" fill="#3178c6" rx="2"/><rect x="343.34" y="60" width="16.66" height="10" fill="#f1e05a" rx="2"/>
+  <rect x="20" y="60" width="327.76000000000005" height="10" fill="#3178c6" rx="2"/><rect x="347.76000000000005" y="60" width="12.240000000000002" height="10" fill="#f1e05a" rx="2"/>
       <circle cx="26" cy="95" r="6" fill="#3178c6"/>
       <text x="38" y="99" class="label">TypeScript</text>
-      <text x="140" y="99" class="small">95.1%</text>
+      <text x="140" y="99" class="small">96.4%</text>
     
       <circle cx="206" cy="95" r="6" fill="#f1e05a"/>
       <text x="218" y="99" class="label">JavaScript</text>
-      <text x="320" y="99" class="small">4.9%</text>
+      <text x="320" y="99" class="small">3.6%</text>
     
 </svg>
