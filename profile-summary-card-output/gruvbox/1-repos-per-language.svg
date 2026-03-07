@@ -7,21 +7,25 @@
   </style>
   <rect width="400" height="180" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
   <text x="200" y="35" class="title" text-anchor="middle">Top Languages</text>
-  <rect x="20" y="60" width="230.18" height="10" fill="#3178c6" rx="2"/><rect x="250.18" y="60" width="98.94000000000001" height="10" fill="#89e051" rx="2"/><rect x="349.12" y="60" width="5.78" height="10" fill="#701516" rx="2"/><rect x="354.9" y="60" width="5.1" height="10" fill="#f1e05a" rx="2"/>
+  <rect x="20" y="60" width="226.43999999999997" height="10" fill="#3178c6" rx="2"/><rect x="246.43999999999997" y="60" width="99.27999999999999" height="10" fill="#89e051" rx="2"/><rect x="345.71999999999997" y="60" width="5.44" height="10" fill="#701516" rx="2"/><rect x="351.15999999999997" y="60" width="5.1" height="10" fill="#f1e05a" rx="2"/><rect x="356.26" y="60" width="3.74" height="10" fill="#3572A5" rx="2"/>
       <circle cx="26" cy="95" r="6" fill="#3178c6"/>
       <text x="38" y="99" class="label">TypeScript</text>
-      <text x="140" y="99" class="small">67.7%</text>
+      <text x="140" y="99" class="small">66.6%</text>
     
       <circle cx="206" cy="95" r="6" fill="#89e051"/>
       <text x="218" y="99" class="label">Shell</text>
-      <text x="320" y="99" class="small">29.1%</text>
+      <text x="320" y="99" class="small">29.2%</text>
     
       <circle cx="26" cy="120" r="6" fill="#701516"/>
       <text x="38" y="124" class="label">Ruby</text>
-      <text x="140" y="124" class="small">1.7%</text>
+      <text x="140" y="124" class="small">1.6%</text>
     
       <circle cx="206" cy="120" r="6" fill="#f1e05a"/>
       <text x="218" y="124" class="label">JavaScript</text>
       <text x="320" y="124" class="small">1.5%</text>
+    
+      <circle cx="26" cy="145" r="6" fill="#3572A5"/>
+      <text x="38" y="149" class="label">Python</text>
+      <text x="140" y="149" class="small">1.1%</text>
     
 </svg>
