@@ -7,10 +7,10 @@
   </style>
   <rect width="400" height="180" rx="8" fill="#282828" stroke="#504945" stroke-width="1"/>
   <text x="200" y="35" class="title" text-anchor="middle">Top Languages</text>
-  <rect x="20" y="60" width="221.33999999999997" height="10" fill="#3178c6" rx="2"/><rect x="241.33999999999997" y="60" width="104.03999999999999" height="10" fill="#89e051" rx="2"/><rect x="345.38" y="60" width="5.44" height="10" fill="#701516" rx="2"/><rect x="350.82" y="60" width="5.1" height="10" fill="#f1e05a" rx="2"/><rect x="355.92" y="60" width="4.08" height="10" fill="#3572A5" rx="2"/><rect x="360" y="60" width="0" height="10" fill="#928374" rx="2"/>
+  <rect x="20" y="60" width="221" height="10" fill="#3178c6" rx="2"/><rect x="241" y="60" width="104.03999999999999" height="10" fill="#89e051" rx="2"/><rect x="345.03999999999996" y="60" width="5.44" height="10" fill="#701516" rx="2"/><rect x="350.47999999999996" y="60" width="5.1" height="10" fill="#f1e05a" rx="2"/><rect x="355.58" y="60" width="4.08" height="10" fill="#3572A5" rx="2"/><rect x="359.65999999999997" y="60" width="0" height="10" fill="#928374" rx="2"/>
       <circle cx="26" cy="95" r="6" fill="#3178c6"/>
       <text x="38" y="99" class="label">TypeScript</text>
-      <text x="140" y="99" class="small">65.1%</text>
+      <text x="140" y="99" class="small">65.0%</text>
     
       <circle cx="206" cy="95" r="6" fill="#89e051"/>
       <text x="218" y="99" class="label">Shell</text>
